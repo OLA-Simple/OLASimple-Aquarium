@@ -14,6 +14,7 @@ gem 'tzinfo-data'
 
 # Json helpers
 gem 'oj'
+gem 'rails-patch-json-encode'
 
 # Authentication and cross origin
 gem 'angular_rails_csrf', '2.1.1'

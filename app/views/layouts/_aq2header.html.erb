@@ -94,6 +94,12 @@
         </div>
       </div>
 
+      <md-button href="/job_submission" aria-label="Submit Jobs"
+                 class="main-button <%= yield(:title) == 'OLASimple Sample Ingestion' ? 'underlined' : '' %>">
+        <%= link_to "Submit Jobs", '/job_submission' %>
+      </md-button>
+
+
       <md-button href="/plans" aria-label="Designer" 
                  class="main-button <%= yield(:title) == 'Designer' ? 'underlined' : '' %>">
         <%= link_to "Designer", plans_path %>
@@ -103,6 +109,14 @@
                  class="main-button <%= yield(:title) == 'Plans' ? 'underlined' : '' %>">
         <%= link_to "Plans", launcher_path %>
       </md-button>
+
+
+      <% if Bioturk::Application.config.technician_dashboard %>
+        <md-button href="/technician_dashboard" aria-label="Technician"
+                   class="main-button <%= yield(:title) == 'Technician' ? 'underlined' : '' %>">
+          <%= link_to "Technician", '/technician_dashboard' %>
+        </md-button>
+      <% end %>
 
       <md-button href="/operations" aria-label="Manager"
                  class="main-button <%= yield(:title) == 'Manager' ? 'underlined' : '' %>">
