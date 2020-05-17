@@ -1,6 +1,6 @@
 # Running OLASimple Aquarium
 
-## Run OLASimple Aquarium locally on your computer using Docker: 
+Run OLASimple Aquarium locally on your computer using Docker: 
 
 1. Install Docker on your computer. 
 
