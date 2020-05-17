@@ -1,21 +1,39 @@
-# AQUARIUM : The Laboratory Operating System
+# Running OLASimple Aquarium
 
-Aquarium allows a researcher to specify precisely how to perform an experimental protocol so that lab personnel will run the protocol the same way, every time.
+## Run OLASimple Aquarium locally on your computer using Docker: 
 
-Protocols, written in a Ruby DSL called Krill, encode how to manipulate Aquarium's inventory system (LIMS), compute formulae such as volumes, molarities, temperatures, and timing, as well as present lab technicians with images and detailed instructions.
-Protocols define formal unit operation types with typed inputs and outputs – allowing the researcher to construct a complex workflow by linking an output sample of one protocol to an input of another using the Aquarium graphical workflow designer.
+1. Install Docker on your computer. 
 
-Protocols and processes are scheduled and presented to technicians on touchscreen monitors placed throughout the lab.
-Every step is logged: who performed the step, which items were used, what data was gathered by which instruments, and how long it took -- data that can be used to debug and improve the experiment.
-More importantly, Aquarium provides a complete, executable description of the results obtained – one that could be used by another lab running Aquarium to reproduce the result.
+2. Download Abe's aquarium fork (requires git on the terminal) 
 
-Aquarium is the operating system of the [UW BIOFAB](http://www.uwbiofab.org), a service of the [Klavins Lab](http://klavinslab.org) at the University of Washington.
+`git clone https://github.com/Gamemackerel/aquarium.git`
 
-## Versions and Releases
+3. Switch to the right branch. First, change into the aquarium directory 
 
-- The latest version is available [here](https://github.com/klavinslab/aquarium/releases/latest). If you would like to stay current with bug fixes, the [master](https://github.com/klavinslab/aquarium/tree/master) branch should almost always be stable and only a few commits ahead of the latest version.
+`cd aquarium`
 
-## Documentation
+then switch to the OLASimple branch 
 
-- User documentation, including installation instructions, can be found at [aquarium.bio](http://www.aquarium.bio).
-- Developer documentation can be found <a href="http://klavinslab.org/aquarium/development/">here</a>.
+`git checkout ola-simple`
+
+4. Build the docker images by runing the command 
+
+`docker-compose build`
+
+5. Start the container. To start the services for Aquarium on non-Windows platforms (e.g. MacOS or Linux), run the command 
+
+`docker-compose up`
+
+>Important: The first run initializes the database, and so will be slower than subsequent runs. This can take longer than you think is reasonable, but let it finish unmolested. 
+
+On Windows, instead use the command 
+
+`docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.windows.yml up` 
+
+6. Login and check that everything is working. Once all of the services for Aquarium have started, visit localhost with the Chrome browser to find the Aquarium login page. If running Aquarium inside the Docker toolbox VM, the address will be instead be 192.168.99.100. When started using the default database, aquarium has a single user with login neptune and password aquarium. If you get errors during startup after doing a build, you may need to run 
+
+`docker-compose pull --ignore-pull-failures docker-compose build --no-cache` 
+
+And, if that doesn't work, let Abe know. Stopping Aquarium in Docker To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
+
+`docker-compose down`
