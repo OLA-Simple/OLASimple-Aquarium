@@ -4,7 +4,7 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 1. Install Docker on your computer. 
 
-2. Download Abe's aquarium fork (requires git on the terminal) 
+2. Download OLA Simple aquarium fork (requires git on the terminal) 
 
 `git clone https://github.com/OLA-Simple/OLASimple-Aquarium`
 
