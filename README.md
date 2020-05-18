@@ -30,6 +30,10 @@ On Windows, instead use the command
 
 `docker-compose pull --ignore-pull-failures docker-compose build --no-cache` 
 
-And, if that doesn't work, let Abe know. Stopping Aquarium in Docker To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
+And, if that doesn't work, let Abe know. 
+
+Stopping Aquarium in Docker: 
+
+To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
 
 `docker-compose down`
