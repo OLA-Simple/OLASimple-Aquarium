@@ -6,15 +6,11 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 2. Download Abe's aquarium fork (requires git on the terminal) 
 
-`git clone https://github.com/Gamemackerel/aquarium.git`
+`git clone https://github.com/OLA-Simple/OLASimple-Aquarium`
 
 3. Switch to the right branch. First, change into the aquarium directory 
 
 `cd aquarium`
-
-then switch to the OLASimple branch 
-
-`git checkout ola-simple`
 
 4. Build the docker images by runing the command 
 
