@@ -704,9 +704,6 @@
           let budget_id = 1; // TODO make into configurable constant
           let template_idx = 0; // TODO make into configurable constant
           $scope.launch_ready_template(template_idx, budget_id, params)
-          .then(() => {
-            return $scope.plan.debug(); // executes first operation which sets up items
-          })
           .then(plan => {
             $scope.state.message = "Submitted plan " + $scope.plan.id
           })
