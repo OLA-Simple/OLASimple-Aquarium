@@ -4,17 +4,13 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 1. Install Docker on your computer. 
 
-2. Download Abe's aquarium fork (requires git on the terminal) 
+2. Download OLA Simple aquarium fork (requires git on the terminal) 
 
-`git clone https://github.com/Gamemackerel/aquarium.git`
+`git clone https://github.com/OLA-Simple/OLASimple-Aquarium`
 
 3. Switch to the right branch. First, change into the aquarium directory 
 
 `cd aquarium`
-
-then switch to the OLASimple branch 
-
-`git checkout ola-simple`
 
 4. Build the docker images by runing the command 
 
@@ -34,6 +30,10 @@ On Windows, instead use the command
 
 `docker-compose pull --ignore-pull-failures docker-compose build --no-cache` 
 
-And, if that doesn't work, let Abe know. Stopping Aquarium in Docker To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
+And, if that doesn't work, let Abe know. 
+
+Stopping Aquarium in Docker: 
+
+To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
 
 `docker-compose down`
