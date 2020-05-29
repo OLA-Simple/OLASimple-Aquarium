@@ -180,6 +180,16 @@
         get_running_jobs();        
       }
 
+      $scope.step_all = function() {
+        if ( confirm("Are you sure you want to force all operations to update? This can take a while and may load the server.")) {
+          $scope.current.stepping = true;
+          AQ.Operation.step_all().then(() => {
+            reload();
+            delete $scope.current.stepping;
+          });
+        }
+      }
+
       $scope.choose = function (operation_type, status, val, job_id) {
         aq.each(operation_type.operations, operation => {
           if (operation.operation_type_id === operation_type.id && operation.status === status && (!job_id || operation.last_job.id === job_id)) {

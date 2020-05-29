@@ -23,6 +23,21 @@
 
 <% end %>
 
+<%= content_for :action4 do %>
+  <div ng-if=" !current.activity_report.selected">
+    <md-button class="md-raised md-primary"
+                ng-click="step_all()"
+                ng-disabled="current.stepping"
+                data-manager-action="step all">
+      <span ng-if="!current.stepping">Reload</span>
+      <span ng-if="current.stepping">
+        <md-progress-linear class="md-hue-2" md-diameter="20px" style="display: inline-block">
+        </md-progress-linear>
+      </span>
+    </md-button>
+  </div>
+<% end %>
+
 <%= content_for :main do %>
 
    <%= render partial: '/data_associations/template' %> 
