@@ -482,18 +482,20 @@ class OperationTypesController < ApplicationController
 
   def numbers
 
-    if current_user.admin?
-      if params[:user_id] && params[:filter] == 'true'
-        render json: OperationType.numbers(User.find(params[:user_id])),
-               status: :ok
-      else
-        render json: OperationType.numbers,
-               status: :ok
-      end
+    # if current_user.admin?
+
+    # For OLASimple we are allowing all users to see all operations.
+    if params[:user_id] && params[:filter] == 'true'
+      render json: OperationType.numbers(User.find(params[:user_id])),
+              status: :ok
     else
-      render json: OperationType.numbers(current_user),
-             status: :ok
+      render json: OperationType.numbers,
+              status: :ok
     end
+    # else
+    #   render json: OperationType.numbers(current_user),
+    #          status: :ok
+    # end
 
   end
 
