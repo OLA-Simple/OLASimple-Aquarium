@@ -26,7 +26,7 @@ On Windows, instead use the command
 
 `docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.windows.yml up` 
 
-6. Login and check that everything is working. Once all of the services for Aquarium have started, visit localhost with the Chrome browser to find the Aquarium login page. If running Aquarium inside the Docker toolbox VM, the address will be instead be 192.168.99.100. When started using the default database, aquarium has a single user with login neptune and password aquarium. If you get errors during startup after doing a build, you may need to run 
+6. Login and check that everything is working. Once all of the services for Aquarium have started, visit `localhost` with the Chrome browser to find the Aquarium login page. If running Aquarium inside the Docker toolbox VM, the address will be instead be `192.168.99.100`. When started using the default database, aquarium has a single user with login `neptune` and password `aquarium`. If you get errors during startup after doing a build, you may need to run 
 
 `docker-compose pull --ignore-pull-failures docker-compose build --no-cache` 
 
