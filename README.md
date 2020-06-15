@@ -8,9 +8,9 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 `git clone https://github.com/OLA-Simple/OLASimple-Aquarium`
 
-3. Switch to the right branch. First, change into the aquarium directory 
+3. Change into the aquarium directory 
 
-`cd aquarium`
+`cd OLASimple-Aquarium`
 
 4. Build the docker images by runing the command 
 
@@ -26,13 +26,13 @@ On Windows, instead use the command
 
 `docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.windows.yml up` 
 
-6. Login and check that everything is working. Once all of the services for Aquarium have started, visit localhost with the Chrome browser to find the Aquarium login page. If running Aquarium inside the Docker toolbox VM, the address will be instead be 192.168.99.100. When started using the default database, aquarium has a single user with login neptune and password aquarium. If you get errors during startup after doing a build, you may need to run 
+6. Login and check that everything is working. Once all of the services for Aquarium have started, visit `localhost` with the Chrome browser to find the Aquarium login page. If running Aquarium inside the Docker toolbox VM, the address will be instead be `192.168.99.100`. When started using the default database, aquarium has a single user with login `neptune` and password `aquarium`. If you get errors during startup after doing a build, you may need to run 
 
 `docker-compose pull --ignore-pull-failures docker-compose build --no-cache` 
 
 And, if that doesn't work, let Abe know. 
 
-Stopping Aquarium in Docker: 
+### Stopping Aquarium in Docker: 
 
 To halt the Aquarium services, first type `ctrl-c` in the terminal to stop the running containers, then remove the containers by running 
 
