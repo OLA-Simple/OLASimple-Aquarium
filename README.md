@@ -10,7 +10,7 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 3. Change into the aquarium directory 
 
-`cd aquarium`
+`cd OLASimple-Aquarium`
 
 4. Build the docker images by runing the command 
 
