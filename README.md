@@ -8,7 +8,7 @@ Run OLASimple Aquarium locally on your computer using Docker:
 
 `git clone https://github.com/OLA-Simple/OLASimple-Aquarium`
 
-3. Switch to the right branch. First, change into the aquarium directory 
+3. Change into the aquarium directory 
 
 `cd aquarium`
 
