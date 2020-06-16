@@ -110,6 +110,17 @@
     margin-bottom: 10px;
   }
 
+  .focused-job {
+    border: 3pt solid #bbb;
+    .job-toolbar {
+      background: #4dff4d;
+      color: black;
+      min-height: 34px;
+      max-height: 34px;         
+    }
+    margin-bottom: 10px;
+  }
+
   .oplist {
     padding: 10px 10px 0 10px;
     margin: 0;

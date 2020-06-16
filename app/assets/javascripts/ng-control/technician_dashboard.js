@@ -215,5 +215,20 @@
         return c;
 
       }
+
+      $scope.focus_index = 0;
+      $scope.keyDown = function(evt) {
+        if ($scope.jobs && $scope.jobs.length > 0) {
+          let job = $scope.jobs[$scope.focus_index];
+          switch (evt.key) {
+            case "End":        
+              window.location.href = "/krill/start?job=" + job.id;
+              break;
+            case "Home":
+              $scope.focus_index = ($scope.focus_index + 1) % $scope.jobs.length;
+            default:
+          }
+        }
+      };
     }]);
 })();

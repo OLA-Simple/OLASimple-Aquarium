@@ -23,6 +23,8 @@
 
 <% end %>
 
+<% content_for :keydown do %>keyDown($event)<% end %>
+
 <%= content_for :action4 do %>
   <div ng-if=" !current.activity_report.selected">
     <md-button class="md-raised md-primary"
@@ -51,8 +53,14 @@
 
     <div ng-if="current.status == 'scheduled' || current.status == 'running'">
 
-      <div ng-if="jobs.length > 0" ng-repeat="job in jobs" class='job'  style='margin: 16px'>
-
+      <div ng-if="jobs.length > 0" ng-repeat="job in jobs" class="job"
+        <%# class="{{$index == focused-index ? 'focused-job' : 'job'}}" %>
+        <%# ng-class="{focused-job: $index == focus_index, job: $index != focus_index}" %>
+        style='margin: 16px'>
+        
+        <div style="{{$index == focus_index ? 'border: 3pt solid #80ff80;' : ''}}">
+        
+        
         <md-toolbar class="job-toolbar">
 
           <div class='md-toolbar-tools'>
@@ -76,12 +84,13 @@
           </div>
 
         </md-toolbar>
+      
 
         <oplist operations="current.operations"
                 status="current.status" 
                 jobid="job.id">
         </oplist>
-
+        </div>
       </div>
 
       <h1 class="md-title" ng-if="jobs.length == 0">No Jobs</h1>

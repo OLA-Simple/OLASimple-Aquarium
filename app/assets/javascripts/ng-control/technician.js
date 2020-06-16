@@ -181,6 +181,15 @@
               $scope.ok();
             }
             break;
+          case "Enter":
+            event.preventDefault();
+            document.getElementById('content-container').focus();
+            if ($scope.job.state.index < $scope.job.backtrace.length - 1) {
+              $scope.job.state.index++;
+            } else if (!$scope.job.backtrace.last.check_next()) {
+              $scope.ok();
+            }
+            break;
           case "Home":
             event.preventDefault();
             document.getElementById('content-container').focus();
