@@ -50,6 +50,8 @@ The following command will create a timestamped backup:
 
 You can do this manually, or you could consider automating it with something like `Cron`.
 
-Here is an example Cron job which will create a backup every 3 days (you may need to provide the absolute location of the OLASimple-Aquarium folder as in something like `/home/users/ola/OLASimple-Aquarium/docker/db`):
+Here is an example Cron job which will create a backup every 3 days:
 
 `0 0 */3 * * zip -r my-backup-location/backup-$(date '+%Y-%m-%d-%s') OLASimple-Aquarium/docker/db OLASimple-Aquarium/docker/s3 >/dev/null 2>&1`
+
+(you may need to provide the absolute location of the OLASimple-Aquarium folder and backup folder as in something like `/home/users/ola/OLASimple-Aquarium/docker/db`)
