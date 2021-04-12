@@ -82,15 +82,13 @@ services:
       - aquarium_net
 
   createbucket:
-    image: minio/mc:latest
+    image: minio/mc:RELEASE.2021-03-23T05-46-11Z
     depends_on:
       - s3
     entrypoint: >
       /bin/sh -c "
       sleep 5;
       mc config host add aqminio http://s3:9000 aquarium_minio KUNAzqrNifmM6GwNVZ8IP7dxZAkYjhnwc0bfdz0W;
-      mc ls;
-      mc ls aqminio;
       mc mb --region us-west-1 -p aqminio/images;
       mc policy set download aqminio/images;
       exit 0;
