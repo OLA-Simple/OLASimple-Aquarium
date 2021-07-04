@@ -19,6 +19,7 @@ RUN apk update && apk add \
     nodejs-npm \
     openjdk8-jre \
     openssl \
+    shared-mime-info \
     sqlite-dev \
     tzdata \
     yarn
@@ -47,8 +48,9 @@ ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
 COPY Gemfile Gemfile.lock ./
 RUN gem update --system
 # rails 4.2.11.1 requires bundler < 2.0
-RUN gem install bundler --version '< 2.0' && \
-    bundle install --jobs 20 --retry 5
+
+RUN gem install bundler:2.0.0.pre.3 && \
+    bundle _2.0.0.pre.3_ install --jobs 20 --retry 5
 COPY . ./
 
 # include entrypoint scripts for starting Aquarium and Krill

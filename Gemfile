@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 # Rails version
 gem 'rails', '4.2.11.1'
+gem 'mimemagic', '> 0.3.5'
 
 # SQL adapter
 gem 'mysql2', '~> 0.5.2'
